@@ -1,11 +1,9 @@
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
   database: online_shop
-  host: localhost
-  pool: 5
-  username: user_for_shop
-  password: password
+  username: root
+  password:
 
 development:
   <<: *default
