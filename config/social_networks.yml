@@ -1,0 +1,23 @@
+development:
+  facebook:
+    key: '304961613223248'
+    secret: '8d81df7b626adf7978d34eec27912b3c'
+  vkontakte:
+    key: '5664869'
+    secret: 'xKKfJv6vniRzLgojAbEP'
+
+test:
+  facebook:
+    key: '304961613223248'
+    secret: '8d81df7b626adf7978d34eec27912b3c'
+  vkontakte:
+    key: '5664869'
+    secret: 'xKKfJv6vniRzLgojAbEP'
+
+production:
+  facebook:
+    key: '304961613223248'
+    secret: '8d81df7b626adf7978d34eec27912b3c'
+  vkontakte:
+    key: '5664869'
+    secret: 'xKKfJv6vniRzLgojAbEP'
