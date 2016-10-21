@@ -1,0 +1,3 @@
+class PruductsController < ApplicationController
+
+end
