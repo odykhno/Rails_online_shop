@@ -10,7 +10,9 @@
 #
 
 class Category < ApplicationRecord
-  has_many :products
+  # has_many :products
+  validates :name, uniqueness: true
+  validates :name, :description, presence: true
 
   ActiveAdmin.register Category do
     permit_params :name, :description

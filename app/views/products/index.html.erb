@@ -1,0 +1,27 @@
+<h1>Listing all available products</h1>
+
+<% if @products.empty? %>
+  <p>Sorry, there are no available products</p>
+<% else %>
+  <table class = table>
+    <tr>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th>Price</th>
+    </tr>
+<% end %>
+
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.category %></td>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= image_tag product.picture.url(:thumb) %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'Show', product_path(product) %></td>
+      </tr>
+    <% end %>
+
+</table>
