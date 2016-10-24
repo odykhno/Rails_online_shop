@@ -9,6 +9,11 @@
               <i class="glyphicon glyphicon-log-out"></i> Sign out
           <% end %>
         </p>
+        <p>
+          <%= link_to destroy_user_session_path, class: 'btn btn-info btn-xs' do %>
+              <i class="glyphicon glyphicon-shopping-cart"></i> Cart
+          <% end %>
+        </p>
     <% else %>
         <p>
           <%= link_to new_user_registration_path, class: 'btn btn-info btn-xs' do %>
