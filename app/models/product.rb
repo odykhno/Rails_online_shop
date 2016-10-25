@@ -16,7 +16,7 @@
 #
 
 class Product < ApplicationRecord
-  # belongs_to :category
+  has_many :reviews
 
   ActiveAdmin.register Product do
     permit_params :name, :description, :picture, :price, :category
