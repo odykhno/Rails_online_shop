@@ -1,0 +1,30 @@
+<h2>Reviews</h2>
+<% if @reviews.empty? %>
+    <p>There are no reviews for this product! You will be the first one</p>
+<% else %>
+    <div id='review_wrapper'>
+      <table id='product_review_<%= @product.id %>' class='table'>
+        <thead>
+        <th>
+          Text
+        </th>
+        <th>
+          Rating
+        </th>
+        </thead>
+<% end %>
+<tbody>
+<% @reviews.each do |review| %>
+    <% next unless comment.persisted? %>
+    <tr>
+      <td>
+        <%= review.text %>
+      </td>
+      <td>
+        <%= review.rating %>
+      </td>
+    </tr>
+<% end %>
+</tbody>
+</table>
+</div>
