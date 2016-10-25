@@ -15,7 +15,7 @@
 <% end %>
 <tbody>
 <% @reviews.each do |review| %>
-    <% next unless comment.persisted? %>
+    <% next unless review.persisted? %>
     <tr>
       <td>
         <%= review.text %>

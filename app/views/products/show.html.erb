@@ -2,6 +2,7 @@
 
 <h2><%= @product.name %></h2>
 <p><sup>From <%= time_ago_in_words(@product.created_at)%></sup></p>
+<p>Rating: <%= average_rating(@product)%></p>
 <p>About: <%= @product.description %></p>
 <p>Price: <%= @product.price %></p>
 <p><%= image_tag @product.picture %></p>
