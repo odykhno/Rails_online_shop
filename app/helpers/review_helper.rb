@@ -4,6 +4,6 @@ module ReviewHelper
     product.reviews.each do |review|
       sum += review.rating
     end
-    average_rating = sum/product.reviews.count
+    product.reviews.count == 0 ? 0 : sum/product.reviews.count
   end
 end
