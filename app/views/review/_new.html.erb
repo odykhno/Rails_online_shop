@@ -2,4 +2,7 @@
   <p><%= f.text_area :text, placeholder: 'Review...' %></p>
   <p><%= f.number_field :rating, placeholder: 'Rating (1-5)' %></p>
   <p><%= f.submit class: 'btn btn-primary' %><p>
+  <% if flash[:confirmation] %>
+    <p class="alert alert-warning"><%= flash[:confirmation] %></p>
+  <% end %>
 <% end %>

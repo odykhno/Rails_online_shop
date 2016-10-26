@@ -5,9 +5,10 @@
 #  id         :integer          not null, primary key
 #  text       :text(65535)
 #  rating     :integer
-#  user_id    :integer
+#  product_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  approved   :boolean          default(FALSE)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
