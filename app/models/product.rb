@@ -13,6 +13,7 @@
 #  picture_content_type :string(255)
 #  picture_file_size    :integer
 #  picture_updated_at   :datetime
+#  rating               :integer          default(0)
 #
 
 class Product < ApplicationRecord

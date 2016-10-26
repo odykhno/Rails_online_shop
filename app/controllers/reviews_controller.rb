@@ -16,12 +16,21 @@ class ReviewsController < ApplicationController
     end
   end
 
+  # def update
+  #   @review = Review.find(params[:id])
+  #   if @review.update(review_params)
+  #     redirect_to @review
+  #   else
+  #     render 'edit'
+  #   end
+  # end
+
   # def show
   # end
 
   private
   def review_params
-    params.require(:review).permit(:text, :rating)
+    params.require(:review).permit(:text, :rating, :approved)
   end
 
   def find_not_approved_reviews
