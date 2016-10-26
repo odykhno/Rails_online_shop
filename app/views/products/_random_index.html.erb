@@ -1,0 +1,14 @@
+<% if @products.empty? %>
+    <p>Sorry, there are no available products</p>
+<% else %>
+  <% @products.each do |product| %>
+    <div class="row">
+      <div class="col-md-2">
+        <p><%= product.name %></p>
+        <p><%= product.rating %></p>
+        <p><%= image_tag product.picture.url(:thumb) %></p>
+        <p><%= product.price %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
