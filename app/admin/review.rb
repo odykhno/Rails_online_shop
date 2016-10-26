@@ -32,7 +32,18 @@ ActiveAdmin.register Review do
   batch_action :approved do |ids|
     Review.find(ids).each do |review|
       review.update(approved: true)
+      review.product.update(rating: average_rating(review.product))
     end
     redirect_to collection_path, alert: "The reviews have been approved."
+  end
+
+  controller do
+    def average_rating(product)
+      sum = 0
+      product.reviews.each do |review|
+        sum += review.rating
+      end
+      product.reviews.count == 0 ? 0 : sum/product.reviews.count
+    end
   end
 end
