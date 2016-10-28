@@ -1,14 +1,11 @@
 <% if @products.empty? %>
     <p>Sorry, there are no available products</p>
 <% else %>
-  <% @products.each do |product| %>
-    <div class="row">
-      <div class="col-md-2">
-        <p><%= product.name %></p>
-        <p><%= product.rating %></p>
-        <p><%= image_tag product.picture.url(:thumb) %></p>
-        <p><%= product.price %></p>
-      </div>
-    </div>
-  <% end %>
+  <div class="container">
+    <%= render partial: "products/five_products", locals: { items: @products1 } %>
+    <%= render partial: "products/five_products", locals: { items: @products2 } %>
+    <%= render partial: "products/five_products", locals: { items: @products3 } %>
+    <%= render partial: "products/five_products", locals: { items: @products4 } %>
+    <%= render partial: "products/five_products", locals: { items: @products5 } %>
+  </div>
 <% end %>
