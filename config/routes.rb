@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   delete 'users/delete_from_cart'
 
   resources :products do
-    resources :reviews do
-    end
+    resources :reviews
     member do
       post :add_to_cart
     end
   end
+
+  resources :orders, only: [:create, :new]
 
 end

@@ -3,8 +3,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2">
+      <p>Total to pay: <%= @total %></p>
       <p>
-        <%= link_to users_show_cart_path, class: 'btn btn-info btn-xs' do %>
+        <%= link_to new_order_path, class: 'btn btn-info btn-xs' do %>
           <i class="glyphicon glyphicon-ok"></i> Buy
         <% end %>
       </p>

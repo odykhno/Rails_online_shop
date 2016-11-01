@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     arr.each do |id|
       @cart << Product.find_by(id: id)
     end
+    prices = @cart.map { |product| product.price }
+    @total = prices.inject(0){ |result, elem| result + elem }
   end
 
   def delete_from_cart
