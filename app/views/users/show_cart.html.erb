@@ -1,0 +1,27 @@
+<h1>Your cart</h1>
+
+<% if @cart.empty? %>
+    <p>Sorry, your cart is empty</p>
+<% else %>
+    <table class = table>
+      <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Description</th>
+        <th>Picture</th>
+        <th>Price</th>
+      </tr>
+<% end %>
+
+<% @cart.each do |product| %>
+    <tr>
+      <td><%= product.category %></td>
+      <td><%= link_to product.name, product_path(product) %></td>
+      <td><%= product.rating %></td>
+      <td><%= product.description %></td>
+      <td><%= image_tag product.picture.url(:thumb) %></td>
+      <td><%= product.price %></td>
+    </tr>
+<% end %>
+</table>
