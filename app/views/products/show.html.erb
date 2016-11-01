@@ -1,0 +1,16 @@
+<h1>Category: <%= @product.category %></h1>
+
+<h2><%= @product.name %></h2>
+
+<%= form_tag("/product", method: "post") do %>
+  <%= submit_tag("Add to cart") %>
+<% end %>
+
+<p><sup>From <%= time_ago_in_words(@product.created_at)%></sup></p>
+<p>Rating: <%= @product.rating %></p>
+<p>About: <%= @product.description %></p>
+<p>Price: <%= @product.price %></p>
+<p><%= image_tag @product.picture %></p>
+
+<%= render partial: "review/index" %>
+<%= render partial: "review/new" %>

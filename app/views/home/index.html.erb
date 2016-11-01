@@ -38,3 +38,19 @@
     <% end %>
   </div>
 </div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Our products</h3>
+  </div>
+  <div class="panel-body">
+    <%= render partial: "products/random_index" %>
+  </div>
+</div>
+
+<p>
+  <%= link_to products_path, class:'btn btn-primary btn-xs' do %>
+    <i class="glyphicon glyphicon-arrow-right"></i> See more products
+  <% end %>
+</p>
+

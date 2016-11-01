@@ -1,0 +1,11 @@
+<% if @products.empty? %>
+    <p>Sorry, there are no available products</p>
+<% else %>
+  <div class="container">
+    <%= render partial: "products/five_products", locals: { items: @products1 } %>
+    <%= render partial: "products/five_products", locals: { items: @products2 } %>
+    <%= render partial: "products/five_products", locals: { items: @products3 } %>
+    <%= render partial: "products/five_products", locals: { items: @products4 } %>
+    <%= render partial: "products/five_products", locals: { items: @products5 } %>
+  </div>
+<% end %>

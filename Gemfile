@@ -57,6 +57,8 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'paperclip', '~> 5.0.0'
 gem 'faker'
 gem 'kaminari'
+gem 'record_tag_helper', '~> 1.0'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

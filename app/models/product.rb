@@ -13,14 +13,11 @@
 #  picture_content_type :string(255)
 #  picture_file_size    :integer
 #  picture_updated_at   :datetime
+#  rating               :integer          default(0)
 #
 
 class Product < ApplicationRecord
-  # belongs_to :category
-
-  ActiveAdmin.register Product do
-    permit_params :name, :description, :picture, :price, :category
-  end
+  has_many :reviews
 
   has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
