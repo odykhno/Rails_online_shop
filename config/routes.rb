@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'users/show_cart'
+  delete 'users/delete_from_cart'
 
   resources :products do
     resources :reviews do

@@ -1,27 +1,41 @@
 <h1>Your cart</h1>
 
-<% if @cart.empty? %>
-    <p>Sorry, your cart is empty</p>
-<% else %>
-    <table class = table>
-      <tr>
-        <th>Category</th>
-        <th>Name</th>
-        <th>Rating</th>
-        <th>Description</th>
-        <th>Picture</th>
-        <th>Price</th>
-      </tr>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <p>
+        <%= link_to users_show_cart_path, class: 'btn btn-info btn-xs' do %>
+          <i class="glyphicon glyphicon-ok"></i> Buy
+        <% end %>
+      </p>
+    </div>
+    <div class="col-md-10">
+      <% if @cart.empty? %>
+        <p>Sorry, your cart is empty</p>
+      <% else %>
+        <table class = table>
+          <tr>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Picture</th>
+            <th>Price</th>
+          </tr>
+      <% end %>
 
-<% @cart.each do |product| %>
-    <tr>
-      <td><%= product.category %></td>
-      <td><%= link_to product.name, product_path(product) %></td>
-      <td><%= product.rating %></td>
-      <td><%= product.description %></td>
-      <td><%= image_tag product.picture.url(:thumb) %></td>
-      <td><%= product.price %></td>
-    </tr>
-<% end %>
-</table>
+      <% @cart.each do |product| %>
+        <tr>
+          <td><%= product.category %></td>
+          <td><%= product.name %></td>
+          <td><%= image_tag product.picture.url(:thumb) %></td>
+          <td><%= product.price %></td>
+          <td><%= link_to 'Delete from cart', users_delete_from_cart_path(product),
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' }%></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+
