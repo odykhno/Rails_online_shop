@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   require 'sendgrid-ruby'
   helper_method :create_order_list
 
-  sendgrid = SendGrid::Client.new do |c|
+  @sendgrid = SendGrid::Client.new do |c|
     c.api_key = 'SENDGRID_APIKEY'
   end
 
@@ -22,13 +22,14 @@ class OrdersController < ApplicationController
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
+
     email = SendGrid::Mail.new do |m|
       m.to      = @order.email
       m.from    = 'notifications@example.com'
       m.subject = 'List of products to buy'
       m.html    = "Your order contains next products: #{@order.orders_list}"
     end
-    sendgrid.send(email)
+    @sendgrid.send(email)
     default from: 'notifications@example.com'
 
     OrdersMailer.create_order(@order).deliver_now
