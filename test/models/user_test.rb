@@ -15,7 +15,9 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  cart                   :text(65535)
+#  cart                   :string(255)      default("")
+#  provider               :string(255)
+#  provider_id            :string(255)
 #
 
 require 'test_helper'

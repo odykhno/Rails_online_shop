@@ -1,0 +1,6 @@
+<%= form_for([@order, current_user.orders.build]) do |f| %>
+    <%= f.label "Your purchases: #{create_order_list(current_user)}"%>
+    <p><%= f.email_field :email, placeholder: 'Email..' %></p>
+    <p><%= f.phone_field :phone_number, placeholder: 'Phone number..' %></p>
+    <p><%= f.submit class: 'btn btn-primary' %></p>
+<% end %>

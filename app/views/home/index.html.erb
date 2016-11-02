@@ -10,7 +10,7 @@
           <% end %>
         </p>
         <p>
-          <%= link_to destroy_user_session_path, class: 'btn btn-info btn-xs' do %>
+          <%= link_to users_show_cart_path, class: 'btn btn-info btn-xs' do %>
               <i class="glyphicon glyphicon-shopping-cart"></i> Cart
           <% end %>
         </p>
@@ -48,9 +48,10 @@
   </div>
 </div>
 
-<p>
-  <%= link_to products_path, class:'btn btn-primary btn-xs' do %>
-    <i class="glyphicon glyphicon-arrow-right"></i> See more products
-  <% end %>
-</p>
-
+<% if current_user %>
+  <p>
+    <%= link_to products_path, class:'btn btn-primary btn-xs' do %>
+      <i class="glyphicon glyphicon-arrow-right"></i> See more products
+    <% end %>
+  </p>
+<% end %>
