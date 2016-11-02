@@ -1,6 +1,4 @@
 class OrdersMailer < ApplicationMailer
-  default from: 'notifications@example.com'
-
   def create_order(order)
     @order = order
     mail(to: order.email, subject: 'List of products to buy')

@@ -238,6 +238,7 @@ GEM
       actionview (~> 5.x)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    ruby_http_client (3.0.0)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -245,6 +246,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sendgrid-ruby (4.0.6)
+      ruby_http_client (~> 3.0.0)
     settingslogic (2.0.9)
     slop (3.6.0)
     spring (2.0.0)
@@ -310,6 +313,7 @@ DEPENDENCIES
   ransack!
   record_tag_helper (~> 1.0)
   sass-rails (~> 5.0)
+  sendgrid-ruby
   settingslogic
   spring
   spring-watcher-listen (~> 2.0.0)

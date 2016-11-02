@@ -61,6 +61,7 @@ gem 'faker'
 gem 'kaminari'
 gem 'record_tag_helper', '~> 1.0'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'sendgrid-ruby'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
