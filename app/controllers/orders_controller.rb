@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  helper_method :create_order_list
+
   def show_form
     render 'new'
   end
@@ -15,10 +17,25 @@ class OrdersController < ApplicationController
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
+    OrdersMailer.create_order(@order).deliver_now
+    OrdersMailer.mail_for_admin(@order).deliver_now
   end
 
   private
   def order_params
     params.require(:order).permit(:email, :phone_number)
+  end
+
+  def create_order_list(user)
+    @cart = []
+    arr = user.cart.split(',')
+    arr.each do |id|
+      @cart << Product.find_by(id: id)
+    end
+    @orders = []
+    @cart.each do |product|
+      @orders << product.name
+    end
+    @orders = @orders.join(', ')
   end
 end
