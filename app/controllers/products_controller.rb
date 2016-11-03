@@ -19,5 +19,6 @@ class ProductsController < ApplicationController
     end
     current_user.save
     flash[:success_add] = 'Product added in your cart successfully!'
+    redirect_to @product
   end
 end

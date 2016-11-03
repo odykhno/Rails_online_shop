@@ -1,19 +1,24 @@
-<h1>Category: <%= @product.category %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Category: <%= @product.category %></h1>
 
-<h2><%= @product.name %></h2>
-<p><sup>From <%= time_ago_in_words(@product.created_at)%></sup></p>
+      <h2><%= @product.name %></h2>
+      <p><sup>From <%= time_ago_in_words(@product.created_at)%></sup></p>
 
-<%= form_tag(add_to_cart_product_path, method: "post") do %>
-  <%= submit_tag("Add to cart", class: 'btn btn-primary') %>
-  <% if flash[:success_add] %>
-    <p class="alert alert-warning"><%= flash[:success_add] %></p>
-  <% end %>
-<% end %>
+      <%= form_tag(add_to_cart_product_path, method: "post") do %>
+          <%= submit_tag("Add to cart", class: 'btn btn-primary') %>
+          <% if flash[:success_add] %>
+              <p class="alert alert-warning"><%= flash[:success_add] %></p>
+          <% end %>
+      <% end %>
 
-<p>Rating: <%= @product.rating %></p>
-<p>About: <%= @product.description %></p>
-<p>Price: <%= @product.price %></p>
-<p><%= image_tag @product.picture %></p>
-
-<%= render partial: "review/index" %>
-<%= render partial: "review/new" %>
+      <p>Rating: <%= @product.rating %></p>
+      <p>About: <%= @product.description %></p>
+      <p>Price: <%= @product.price %></p>
+      <p><%= image_tag @product.picture %></p>
+    </div>
+    <div class="col-md-6">
+      <%= render partial: "review/index" %>
+      <%= render partial: "review/new" %>
+    </div> 
