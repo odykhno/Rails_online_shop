@@ -11,4 +11,6 @@
 
 class Order < ApplicationRecord
   belongs_to :user
+
+  # validates :email, :phone_number, presence: true
 end
