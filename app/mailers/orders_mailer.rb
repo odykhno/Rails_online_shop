@@ -1,7 +1,9 @@
 class OrdersMailer < ApplicationMailer
+  default :from => 'online-shop@example.com'
+
   def create_order(order)
     @order = order
-    mail(to: order.email, subject: 'List of products to buy')
+    mail(to: @order.email, subject: 'List of products to buy')
   end
 
   def mail_for_admin(order)
