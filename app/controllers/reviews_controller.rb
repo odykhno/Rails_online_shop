@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-  # before_action :find_approved_comments, :only => [:show, :save]
 
   def create
     @product = Product.find(params[:product_id])
@@ -16,33 +15,8 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # def update
-  #   @review = Review.find(params[:id])
-  #   if @review.update(review_params)
-  #     redirect_to @review
-  #   else
-  #     render 'edit'
-  #   end
-  # end
-
-  # def show
-  # end
-
   private
   def review_params
     params.require(:review).permit(:text, :rating, :approved)
-  end
-
-  def find_not_approved_reviews
-    @reviews = []
-    products = Product.all
-    unless products.nil?
-      products.each do |product|
-        product.reviews.where(approved: false).each do |review|
-          @reviews << review
-        end
-      end
-    end
-    @reviews
   end
 end
