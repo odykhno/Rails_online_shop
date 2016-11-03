@@ -9,6 +9,9 @@
           <i class="glyphicon glyphicon-ok"></i> Buy
         </button>
       </p>
+      <% if flash[:errors] %>
+        <p class="alert alert-danger"><%= flash[:errors] %></p>
+      <% end %>
     </div>
     <div class="col-md-10">
       <% if @cart.empty? %>

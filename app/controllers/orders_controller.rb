@@ -11,7 +11,10 @@ class OrdersController < ApplicationController
         format.html { redirect_to users_show_cart_path }
         format.json { render json: @order }
       else
-        format.html { render :new }
+        format.html do
+          redirect_to users_show_cart_path
+          flash[:errors] = 'The form has been filled in incorrectly!!!'
+        end
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
